@@ -1,0 +1,8 @@
+@each $size, $value in $font-sizes {
+  .text-#{$size} {
+    @include font-size($value);
+  }
+}
+@each $color, $value in $text-colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}

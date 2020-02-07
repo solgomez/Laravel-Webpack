@@ -1,0 +1,51 @@
+.header {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+.header__brand img {
+  height: 40px;
+  width: auto;
+}
+.bg-light{
+  background-color: #f8f8f8 !important;
+}
+.header-top {
+  border-bottom: 3px solid #ececec;
+}
+.wrapper {
+  @include media-breakpoint-up(xs) {
+    display: grid;
+    grid-template: min-content 1fr min-content / 100%;
+    min-height: 100vh;
+  }
+}
+.footer {
+  background-color: #262629;
+  color: gray;
+  font-size: 14px;
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__logo {
+    height: 40px;
+    width: auto;
+  }
+}
+.btn-verde{
+  border-radius: 6px;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color:#005a54;
+  border-color: #005a54;
+  color: white;
+}
+.btn-verde:hover{
+color:#00b131;
+font-weight: bold;
+background-color: white;
+border-color: #00b131;
+}
+.border-tema{
+  border-bottom: solid 1px #979797;
+}

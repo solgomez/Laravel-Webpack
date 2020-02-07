@@ -1,0 +1,241 @@
+//
+// ────────────────────────────────────────────────────────────
+// Color
+// ────────────────────────────────────────────────────────────
+//
+$gray-50:        #605e5e;
+$gray-100:       #5d5d5d;
+$gray-200:       #5a5a5a;
+$gray-300:       #dce4e4;
+$gray-400:       #d8d8d8;
+$gray-500:       #898d8d;
+$gray-600:       #c3c3c3;
+$gray-700:       #ababb8;
+$gray-800:       #979797;
+$gray-900:       #888c8c;
+$black-100:      #4a4a4a;
+$black-200:      #767676;
+$gray-20:        #c9c9c9;
+$gray-30:        #737373;
+
+$primary-light:  #31b700;
+$primary:        #14807e;
+$primary-dark:   #005b50;
+$danger-light:   #fd1a16;
+$danger:         #e02020;
+$warning:        #ff9914;
+$warning-dark:   #fa6400;
+$light:          #f6f6f6;
+$dark:           #727176;
+$black:          #4a4e4e;
+$green-primary:  #00b140;
+$green-azulado:  #009288;
+$green-azulado-dark: #0f4c42;
+$azulado:        #198684;
+$azul-dark:      #1e8c8a;
+$gray-10:        #7f9494;
+
+$border-color:   $gray-800;
+$body-color:     #5d5d5e;
+
+$text-colors: (
+  "primary-light":  $primary-light,
+  "primary-dark":   $primary-dark,
+  "gray-9":         $gray-900,
+  "gray-7":         $gray-700,
+  "gray-2":         $gray-200,
+  "black":          black,
+  "warning-dark":   $warning-dark,
+  "danger-light":   $danger-light,
+  "gray-100":       $gray-100,
+  "green-primary":  $green-primary,
+  "green-azulado":  $green-azulado,
+  "gray-500":       $gray-500,
+  "green-azulado-dark": $green-azulado-dark,
+  "azulado":        $azulado,
+  "azul-dark":      $azul-dark,
+  "black-100":      $black-100,
+  "black-200":      $black-200,
+  "gray-50":        $gray-50,
+  "gray-20":        $gray-20,
+  "gray-30":        $gray-30,
+  "gray-10":        $gray-10,
+);
+
+//
+// ────────────────────────────────────────────────────────────
+// Options
+// ────────────────────────────────────────────────────────────
+//
+$enable-shadows:                 true;
+$enable-responsive-font-sizes:   true;
+
+//
+// ────────────────────────────────────────────────────────────
+// Typography
+// ────────────────────────────────────────────────────────────
+//
+$font-weight-light:       100;
+$font-weight-normal:      400;
+$font-weight-semibold:    600;
+$font-weight-bold:        700;
+$font-weight-extrabold:   800;
+
+$fonts:
+  "ExtraLight" $font-weight-light,
+  "Regular"    $font-weight-normal,
+  "SemiBold"   $font-weight-semibold,
+  "Bold"       $font-weight-bold,
+  "ExtraBold"  $font-weight-extrabold;
+
+@each $weight in $fonts {
+
+  @font-face {
+    font-display: fallback;
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: nth($weight, 2);
+    src: url("../fonts/metropolis/woff2/Metropolis-#{nth($weight, 1)}.woff2") format("woff2"),
+         url("../fonts/metropolis/woff/Metropolis-#{nth($weight, 1)}.woff") format("woff"),
+         url("../fonts/metropolis/truetype/Metropolis-#{nth($weight, 1)}.ttf") format("truetype");
+  }
+}
+
+$font-family-base:            "Metropolis", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-size-base:              1rem;                     // Assumes the browser default, typically `16px`
+$font-size-xxxl:              $font-size-base * 3.125;  // 50px
+$font-size-xxl:               $font-size-base * 3;      // 48px
+$font-size-2xl:               $font-size-base * 2.1875; // 35px
+$font-size-xl:                $font-size-base * 0.9375; // 15px
+$font-size-lg:                $font-size-base * 0.875;  // 14px
+$font-size-md:                $font-size-base * 0.8125; // 13px
+$font-size-sm:                $font-size-base * 0.75;   // 12px
+$font-size-xs:                $font-size-base * 0.6875; // 11px
+$font-size-xxs:               $font-size-base * 0.6825; // 10px
+$font-size-2xxs:              $font-size-base * 0.5;    // 8px
+
+$h1-font-size:                $font-size-base * 2.8125; // 45px
+$h2-font-size:                $font-size-base * 1.75;   // 28px
+$h3-font-size:                $font-size-base * 1.5;    // 24px
+$h4-font-size:                $font-size-base * 1.375;  // 22px
+$h5-font-size:                $font-size-base * 1.25;   // 20px
+$h6-font-size:                $font-size-base * 1.125;  // 18px
+
+$font-sizes: (
+  "base":  $font-size-base,
+  "xxxl":  $font-size-xxxl,
+  "xxl":   $font-size-xxl,
+  "2xl":   $font-size-2xl,
+  "xl":    $font-size-xl,
+  "lg":    $font-size-lg,
+  "md":    $font-size-md,
+  "sm":    $font-size-sm,
+  "h6":    $h6-font-size,
+  "xxs":   $font-size-xxs,
+  "2xxs":  $font-size-2xxs,
+  "h2":    $h2-font-size,
+  "h4":    $h4-font-size,
+  "h1":    $h1-font-size,
+  "h3":    $h3-font-size,
+  "h5":    $h5-font-size,
+  "xs":    $font-size-xs
+);
+
+//
+// ────────────────────────────────────────────────────────────
+// Spacing
+// ────────────────────────────────────────────────────────────
+//
+$spacer:      1rem;
+
+$spacers: (
+  5: ($spacer * 2),
+  6: ($spacer * 2.5),
+  7: ($spacer * 3),
+  8: ($spacer * 3.5)
+);
+
+//
+// ────────────────────────────────────────────────────────────
+// Navbar
+// ────────────────────────────────────────────────────────────
+//
+$navbar-padding-y:                  ($spacer * 0.75);
+$navbar-brand-padding-y:            0;
+
+//
+// ────────────────────────────────────────────────────────────
+// Buttons + Forms
+// ────────────────────────────────────────────────────────────
+//
+$input-btn-font-size-lg:      $h4-font-size;
+
+//
+// ────────────────────────────────────────────────────────────
+// Buttons
+// ────────────────────────────────────────────────────────────
+//
+$btn-padding-y:               0.45rem;
+$btn-padding-x:               1.75rem;
+$btn-font-size:               $font-size-lg;
+
+$btn-padding-y-lg:            ($spacer * 0.3);
+$btn-padding-x-lg:            ($spacer * 1.75);
+
+$btn-font-weight:             $font-weight-semibold;
+$btn-box-shadow:              none;
+$btn-disabled-opacity:        1;
+
+//
+// ────────────────────────────────────────────────────────────
+// Forms
+// ────────────────────────────────────────────────────────────
+//
+$input-bg:                              white;
+$input-disabled-bg:                     $gray-400;
+
+$input-color:                           #898d8d;
+$input-border-color:                    #c1c7d0;
+
+$input-border-radius:                   8px;
+$input-border-radius-lg:                $input-border-radius;
+$input-border-radius-sm:                $input-border-radius;
+
+$input-font-size-sm:                    $font-size-base;
+
+
+//
+// ────────────────────────────────────────────────────────────
+// Navs
+// ────────────────────────────────────────────────────────────
+//
+$nav-tabs-border-color:             $primary;
+$nav-tabs-border-width:             0;
+$nav-tabs-border-radius:            0;
+$nav-tabs-link-hover-border-color:  transparent transparent $nav-tabs-border-color;
+$nav-tabs-link-active-color:        $primary;
+$nav-tabs-link-active-bg:           transparent;
+$nav-tabs-link-active-border-color: $nav-tabs-link-active-bg $nav-tabs-link-active-bg $nav-tabs-link-active-color;
+
+//
+// ────────────────────────────────────────────────────────────
+// Modal
+// ────────────────────────────────────────────────────────────
+//
+$modal-content-border-radius:       0;
+$modal-content-box-shadow-xs:       none;
+$modal-content-box-shadow-sm-up:    none;
+$modal-backdrop-opacity:            0.75;
+$modal-lg:                          750px;
+
+
+$custom-select-border-color:                    #3f9c90;
+$custom-select-color:                           #898d8d;
+$custom-select-border-radius:                   7px;
+$custom-select-bg: white;
+
+$custom-file-text: (
+  en: "Browse",
+  es: "Seleccionar"
+);
